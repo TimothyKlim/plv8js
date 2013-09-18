@@ -10,11 +10,13 @@
 #include <sstream>
 
 extern "C" {
+#if !(defined(__sun) && defined(__SVR4))
 #define delete		delete_
 #define namespace	namespace_
 #define	typeid		typeid_
 #define	typename	typename_
 #define	using		using_
+#endif
 
 #include "access/xact.h"
 #include "catalog/pg_type.h"

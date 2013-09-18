@@ -8,11 +8,13 @@
 #include "plv8.h"
 
 extern "C" {
+#if !(defined(__sun) && defined(__SVR4))
 #define delete		delete_
 #define namespace	namespace_
 #define	typeid		typeid_
 #define	typename	typename_
 #define	using		using_
+#endif
 
 #if PG_VERSION_NUM >= 90300
 #include "access/htup_details.h"
