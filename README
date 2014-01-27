@@ -55,6 +55,7 @@ SOLARIS (SMARTOS)
   $ cd v8
   $ export GYPFLAGS="-D OS=solaris"
   $ gmake dependencies
+  # patch fucking tools/gyp/v8.gyp with 'standalone_static_library': 1 in each static_library section type
   $ gmake x64.release -j 4 library=shared strictaliasing=off # or ia32
   $ ginstall -m 755 `pwd`/out/x64.release/lib.target/libv8.so /opt/local/lib/libv8.so # or ia32
   $ for f in `pwd`/include/*.h; do ginstall -m 644 ${f} /opt/local/include/; done
