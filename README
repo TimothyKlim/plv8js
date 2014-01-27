@@ -51,8 +51,8 @@ For more detail, please refer to http://code.google.com/p/plv8js/issues/detail?i
 SOLARIS (SMARTOS)
 -------
   $ cd ~/build
-  $ wget https://github.com/v8/v8/archive/3.21.17.tar.gz && tar -xf 3.21.17.tar.gz
-  $ cd v8-3.21.17
+  $ svn checkout http://v8.googlecode.com/svn/trunk/@r16802 v8
+  $ cd v8
   $ export GYPFLAGS="-D OS=solaris"
   $ gmake dependencies
   $ gmake x64.release -j 4 library=shared strictaliasing=off # or ia32
